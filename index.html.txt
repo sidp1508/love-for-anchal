@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>For My Love Anchal ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+overflow:hidden;
+}
+
+.card{
+background: rgba(255,255,255,0.15);
+padding:40px;
+border-radius:20px;
+width:90%;
+max-width:420px;
+backdrop-filter: blur(10px);
+}
+
+h1{
+font-size:32px;
+}
+
+p{
+font-size:20px;
+min-height:60px;
+}
+
+button{
+padding:12px 28px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#ff2e63;
+color:white;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#ff004d;
+}
+
+/* hearts */
+
+.heart{
+position:absolute;
+color:#ffdde1;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);opacity:1}
+100%{transform:translateY(-10vh);opacity:0}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>I'm Sorry Anchal ❤️</h1>
+
+<p id="message">
+I know I made mistakes and hurt you...  
+But my heart still belongs only to you.
+</p>
+
+<button onclick="nextMessage()">Next Love ❤️</button>
+
+</div>
+
+<script>
+
+let messages = [
+
+"I miss your smile every moment.",
+"You are the most beautiful part of my life.",
+"My world feels empty without you.",
+"I promise to treat your heart with love and respect.",
+"Please forgive me Anchal… ❤️",
+"I love you today, tomorrow, and forever."
+
+];
+
+let i=0;
+
+function nextMessage(){
+
+document.getElementById("message").innerText=messages[i];
+i++;
+
+if(i>=messages.length){
+document.getElementById("message").innerText="💖 Anchal, you are my everything. Please forgive me. I love you forever. 💖";
+}
+
+}
+
+/* floating hearts */
+
+function createHeart(){
+
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHeart,500);
+
+</script>
+
+</body>
+</html>
